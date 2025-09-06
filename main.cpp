@@ -31,7 +31,13 @@ public:
 
 	void push_back(const unsigned s, const int newValue) {
 		MyVector copy;
+		copy.clear();
 		copy.m_size = m_size + 1;
+		copy.data = new int[copy.m_size];
+		for (unsigned int i = 0; i < m_size; ++i)
+		{
+			copy.data[i] = 0;
+		}
 		copy_vector(copy.data, data, s);
 		copy[s] = newValue;
 		clear();
